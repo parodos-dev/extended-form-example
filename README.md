@@ -1,10 +1,19 @@
-# [Backstage](https://backstage.io)
 
-This is your newly scaffolded Backstage App, Good Luck!
+Extended orchestrator workflow execution form plugin example
 
-To start the app, run:
+This repository showcases an example backstage plugin, illustrating how to to customize and extend a workflow execution form. This setup provides a Backstage instance where the plugin can be debugged before integration with the orchestrator in a Red Hat Developer Hub deployment.
 
-```sh
+To run the plugin locally:
+
+Install Dependencies:
+
+bash
+Copy code
 yarn install
+Run the Application:
+
+bash
+Copy code
 yarn dev
-```
+
+Access: Open your browser and go to http://localhost:3000 to explore the application.

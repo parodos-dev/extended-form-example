@@ -43,7 +43,7 @@ export const TestFormPage = () => (
   <Page themeId="tool">
     <Header title="Test form" />     
     <Content>
-      <OrchestratorForm schema={schema} isExecuting={false} handleExecute={handleExecute} isDataReadonly={false} />
+      <OrchestratorForm schema={schema} isExecuting={false} handleExecute={handleExecute}/>
     </Content>
   </Page>
 );

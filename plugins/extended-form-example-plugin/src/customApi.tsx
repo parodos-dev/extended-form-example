@@ -44,7 +44,7 @@ class CustomFormExtensionsApi implements OrchestratorFormApi {
           };
           return (<FormComponent widgets={widgets} onChange={(e) => {
               const data = e.formData as Data;            
-              if (data.personalInfo.country !== formContext.country ) {
+              if (data.personalInfo?.country !== formContext.country ) {
                 setFormContext({country: data.personalInfo?.country});                    
               }                  
             }} 
@@ -52,7 +52,7 @@ class CustomFormExtensionsApi implements OrchestratorFormApi {
             customValidate={customValidate}
             getExtraErrors={async (formData: JsonObject) => {
               const _formData = formData as Data;
-              return sleep(1000).then(() => {
+              return sleep(1000).then(() => { 
                 const errors: ErrorSchema<Data> = {};
                 if (reservedNames.includes(_formData.personalInfo?.firstName)) {
                   errors.personalInfo = {

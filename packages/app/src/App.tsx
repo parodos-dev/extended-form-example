@@ -37,7 +37,7 @@ import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 import { TestFormPage } from './components/TestForm';
-import { testFactoryPlugin } from 'backstage-plugin-testfactory';
+import { testFactoryPlugin } from 'extended-form-example-plugin';
 
 const app = createApp({
   apis,
@@ -98,7 +98,7 @@ const routes = (
     </Route>
     <Route path="/settings" element={<UserSettingsPage />} />
     <Route path="/catalog-graph" element={<CatalogGraphPage />} />
-    <Route path="/testfactory" element={<TestFormPage />} />
+    <Route path="/extended-form-example-plugin" element={<TestFormPage />} />
   </FlatRoutes>
 );
 
