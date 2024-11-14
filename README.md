@@ -38,7 +38,7 @@ Add the following entry to the [RHDH plugins ConfigMap](https://docs.redhat.com/
         pluginConfig:
           dynamicPlugins:
             frontend:
-              extended-form-example-plugin:
+              custom-form-example-plugin:
                 apiFactories:
                   - importName: formApiFactory 
 ```
