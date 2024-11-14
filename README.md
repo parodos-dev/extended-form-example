@@ -65,4 +65,4 @@ Access the Custom Form: Open RHDH in your browser. Navigate to the Orchestrator 
 
 > **Note:** This example is specific to a single workflow. Since only one plugin like this can be provided, a generic implementation is recommended to support all workflows. For example, using a property like `ui:validationType` can allow the plugin to provide custom validations for various `validationType` values.
 
-More details on the archistrator are available [here](https://github.com/janus-idp/backstage-plugins/tree/release-1.3/plugins/orchestrator-form-api#readme).
+More details on the architecture are available [here](https://github.com/janus-idp/backstage-plugins/tree/release-1.3/plugins/orchestrator-form-api#readme).
