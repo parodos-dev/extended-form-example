@@ -1,5 +1,5 @@
 {
-  "name": "extended-form-example-plugin",
+  "name": "custom-form-example-plugin",
   "version": "0.1.0",
   "main": "src/index.ts",
   "types": "src/index.ts",
@@ -11,9 +11,9 @@
   },
   "backstage": {
     "role": "frontend-plugin",
-    "pluginId": "extended-form-example-plugin",
+    "pluginId": "custom-form-example-plugin",
     "pluginPackages": [
-      "extended-form-example-plugin"
+      "custom-form-example-plugin"
     ]
   },
   "sideEffects": false,

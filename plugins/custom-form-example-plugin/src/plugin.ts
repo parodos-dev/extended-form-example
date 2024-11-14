@@ -17,7 +17,7 @@ export const formApiFactory =  createApiFactory({
 });
 
 export const testFactoryPlugin = createPlugin({
-  id: 'extended-form-example-plugin',
+  id: 'custom-form-example-plugin',
   routes: {
     root: rootRouteRef,
   },

@@ -10321,7 +10321,7 @@ apg-lite@^1.0.3:
     "@janus-idp/backstage-plugin-orchestrator-form-react" "1.0.101"
     "@material-ui/core" "^4.12.2"
     "@material-ui/icons" "^4.9.1"
-    extended-form-example-plugin "*"
+    custom-form-example-plugin "*"
     history "^5.0.0"
     json-schema "^0.4.0"
     react "^18.0.2"
