@@ -20,7 +20,7 @@ const CountryWidget: Widget<JsonObject, JSONSchema7, any> = ({ value, onChange }
       const countryOptions: Option[] =  data.map((country: any) => ({
         label: country.name.common,
         value: country.name.common,
-      }));
+      })).sort(({label: label1}, {label: label2}) => label1.localeCompare(label2));
       setCountries(countryOptions);
     } catch (err) {
       // eslint-disable-next-line no-alert
