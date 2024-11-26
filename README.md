@@ -1,7 +1,7 @@
 
 # Custom Form Plugin Example
 
-This repository demonstrates a Backstage plugin that customizes and extends the orchestrator workflow execution form. It provides a standalone Backstage instance for testing and debugging the plugin before integration with the orchestrator in a Red Hat Developer Hub (RHDH) deployment. The plugin’s features are illustrated using an [example workflow](https://github.com/parodos-dev/serverless-workflows-config/tree/main/charts/extendable-workflow). This workflow’s input schema includes custom UI properties that trigger specific form enhancements, such as the property `["ui:widget": "CountryWidget"](https://github.com/parodos-dev/serverless-workflows-config/blob/main/charts/extendable-workflow/templates/02-configmap_01-extendable-workflow-resources-schemas.yaml#L24)`, which loads the plugin's custom `CountryWidget` component.
+This repository demonstrates a Backstage plugin that customizes and extends the orchestrator workflow execution form. It provides a standalone Backstage instance for testing and debugging the plugin before integration with the orchestrator in a Red Hat Developer Hub (RHDH) deployment. The plugin’s features are illustrated using an [example workflow](https://github.com/parodos-dev/serverless-workflows-config/tree/main/charts/extendable-workflow). This workflow’s input schema includes custom UI properties that trigger specific form enhancements, such as the property ["ui:widget": "CountryWidget"](https://github.com/parodos-dev/serverless-workflows-config/blob/main/charts/extendable-workflow/templates/02-configmap_01-extendable-workflow-resources-schemas.yaml#L24), which loads the plugin's custom `CountryWidget` component.
 
 
 ## Getting Started
