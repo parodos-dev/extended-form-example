@@ -16,10 +16,10 @@ interface Option {
 }
 
 const LanguageWidget: Widget<JsonObject, JSONSchema7, FormContextData> = ({ value, onChange, formContext }) => {
+  
   const [languages, setLanguages] = useState<Option[]>([]);
   const [loading, setLoading] = useState(false);
   const country = formContext?.country;
-
   const fetchLanguages = React.useCallback(async () => {
     try {
       const response = await fetch("https://restcountries.com/v3.1/all");
@@ -41,12 +41,6 @@ const LanguageWidget: Widget<JsonObject, JSONSchema7, FormContextData> = ({ valu
       setLoading(false);
     }
   }, [country]);
-
-  useEffect(() => {
-    if (languages.length === 1) {
-      onChange(languages[0].value);
-    }
-  }, [languages, onChange]);
 
   useEffect(() => {
     if (country) {

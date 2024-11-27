@@ -37,13 +37,27 @@ const schema = {
   }
 } as JSONSchema7;
 
+
+const data = {
+  personalInfo: {
+    firstName: "john",
+    lastName: "doe",
+    country: "Israel",
+    password: "aaa",
+    confirmPassword: "aaa"
+  },
+  languageInfo: {
+    language: "heb"
+  }
+};
+
 const handleExecute = (parameters: JsonObject): Promise<void> => {console.log(parameters); return Promise.resolve();}
 
 export const TestFormPage = () => (
   <Page themeId="tool">
     <Header title="Test form" />     
     <Content>
-      <OrchestratorForm schema={schema} isExecuting={false} handleExecute={handleExecute}/>
+      <OrchestratorForm schema={schema} isExecuting={false} handleExecute={handleExecute} data={data}/>
     </Content>
   </Page>
 );
