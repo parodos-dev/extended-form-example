@@ -33,8 +33,8 @@ Add the following entry to the [RHDH plugins ConfigMap](https://docs.redhat.com/
 
 ```yaml
       - disabled: false
-        package: "https://github.com/parodos-dev/custom-form-example-plugin/releases/download/0.1.0/custom-form-example-plugin-0.1.0.tgz"
-        integrity: sha512-2zirrShnt9etkOGA/KqJ02GotH2I9qlty8I7Sx5hNURM8tglg+3iCQzRP5W69mAUkSSwpd90fNkctSEDecTzvQ==
+        package: "https://github.com/parodos-dev/custom-form-example-plugin/releases/download/0.2.0/custom-form-example-plugin-0.2.0.tgz"
+        integrity: sha512-1L2JKfvJBYHXFQsb6NrgvdXUrAXkmlloDAQiTeR8La2cNqOTeBMF91E+0ixhm4wy10gzdZXtytORjk1UWFVHlw==
         pluginConfig:
           dynamicPlugins:
             frontend:
