@@ -2492,15 +2492,6 @@
     "@backstage/errors" "^1.2.4"
     "@backstage/types" "^1.1.1"
 
-"@backstage/config@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@backstage/config/-/config-1.3.0.tgz#ca5771175451410bb7977e80e2b192a4dc2efd9d"
-  integrity sha512-DXrcPIwgZAHrKj3MRHt6yC63E1/LXXgM0hdAFJYkRYb7r+VX3KGBfxo1NtWdB6A4gTXhxfEWc7FWvdloIDDoGg==
-  dependencies:
-    "@backstage/errors" "^1.2.5"
-    "@backstage/types" "^1.2.0"
-    ms "^2.1.3"
-
 "@backstage/core-app-api@^1.14.0", "@backstage/core-app-api@^1.14.1":
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/@backstage/core-app-api/-/core-app-api-1.14.1.tgz#d998ba2b9b2fd80db762a933c5e2d9985c14c1ac"
@@ -2573,17 +2564,6 @@
     zen-observable "^0.10.0"
     zod "^3.22.4"
 
-"@backstage/core-plugin-api@^1.10.0":
-  version "1.10.1"
-  resolved "https://registry.yarnpkg.com/@backstage/core-plugin-api/-/core-plugin-api-1.10.1.tgz#04cd87fc5262e1f1d7a574761a2cd9161ba1a50a"
-  integrity sha512-/hXKYZBzW9Kf5MgfdU4Dtfj2UyVVZ3F+ghm2WYIW7KgoI6EiZ4Ovwmpo9VYEj6kwQCAruKrqrPVhqtHVR/1Sog==
-  dependencies:
-    "@backstage/config" "^1.3.0"
-    "@backstage/errors" "^1.2.5"
-    "@backstage/types" "^1.2.0"
-    "@backstage/version-bridge" "^1.0.10"
-    history "^5.0.0"
-
 "@backstage/core-plugin-api@^1.9.3":
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/@backstage/core-plugin-api/-/core-plugin-api-1.9.3.tgz#66b4b7dc620823c66b123c8a2d6db088e2936027"
@@ -2628,14 +2608,6 @@
   integrity sha512-JBhKn9KwZTzp/AaOC0vBncKCM1vI9Z8rKKyr9vj3wt3SSgCnDPxNwVz7SlXa2Rc9TOQq0Yk3olkmQE9U+S5uWg==
   dependencies:
     "@backstage/types" "^1.1.1"
-    serialize-error "^8.0.1"
-
-"@backstage/errors@^1.2.5":
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/@backstage/errors/-/errors-1.2.5.tgz#447177ac5a5e904b5d54019f6f14eda3c1073177"
-  integrity sha512-JoLzSdCt5uHPYvC/aR/UE10+d1WlTEsR0L7xWBgcTluC9VUpFmV5W15bNL+ckZHi14nQV3V1DOk9uhsR1ER45w==
-  dependencies:
-    "@backstage/types" "^1.2.0"
     serialize-error "^8.0.1"
 
 "@backstage/eslint-plugin@^0.1.8":
@@ -4023,16 +3995,6 @@
   resolved "https://registry.yarnpkg.com/@backstage/types/-/types-1.1.1.tgz#c9ccb30357005e7fb5fa2ac140198059976eb076"
   integrity sha512-1cUGu+FwiJZCBOuecd0BOhIRkQYllb+7no9hHhxpAsx/DvsPGMVQMGOMvtdTycdT9SQ5MuSyFwI9wpXp2DwVvQ==
 
-"@backstage/types@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@backstage/types/-/types-1.2.0.tgz#14fec6240e7ec0f3189fca0890be1e54debc54ea"
-  integrity sha512-YoWvCLJNOgvRXSqH8EoWmmQ8G8+emiYpn5dqDZcMrqAA6Xa8yFFVsQTujEusx5ZSwahPMbSDobNJgiSoXL3XyA==
-
-"@backstage/version-bridge@^1.0.10":
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/@backstage/version-bridge/-/version-bridge-1.0.10.tgz#f3f383a27e11a60b382ef1ad411d43a476535ac7"
-  integrity sha512-KjKhUYGdYADtuhBgkWb2FeQY1xYd/q20GtwWlGBCeXqZAswbGV2I25Kc0UJ4sxDaNIIeNOkzBfPXhriMMQFwkQ==
-
 "@backstage/version-bridge@^1.0.8":
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/@backstage/version-bridge/-/version-bridge-1.0.8.tgz#c6664708bcd20744e7b2c440a03f1e44f7c4a2a1"
@@ -5109,7 +5071,7 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.3.tgz#e45e384e4b8ec16bce2fd903af78450f6bf7ec98"
   integrity sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==
 
-"@janus-idp/backstage-plugin-orchestrator-form-api@1.0.102":
+"@janus-idp/backstage-plugin-orchestrator-form-api@1.0.102", "@janus-idp/backstage-plugin-orchestrator-form-api@^1.0.102":
   version "1.0.102"
   resolved "https://registry.yarnpkg.com/@janus-idp/backstage-plugin-orchestrator-form-api/-/backstage-plugin-orchestrator-form-api-1.0.102.tgz#02846b525eaabc82cc274171395f6b80988336c3"
   integrity sha512-yIjq5jbFwRCmD9fWzg4Dm/cdq990NQPsiN1vBwqF3rIPdWDrr57sFKJfH+sMK5vw+7W3mXzzSzbfkNh7RaKbWQ==
@@ -5119,20 +5081,10 @@
     "@rjsf/core" "5.18.5"
     "@rjsf/utils" "5.18.5"
 
-"@janus-idp/backstage-plugin-orchestrator-form-api@^1.0.103":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@janus-idp/backstage-plugin-orchestrator-form-api/-/backstage-plugin-orchestrator-form-api-1.4.1.tgz#14fbd44cc4521a438a7e1113d3a0ef6f575a9396"
-  integrity sha512-VQE1z7eNmXjV2FgjIQHlpRWxCWl3y7QnYHwwy09U+NCtIVF0TQfbXK7l8F043RfBSs34OFrtLvHTxbUISAvgzg==
-  dependencies:
-    "@backstage/core-plugin-api" "^1.10.0"
-    "@backstage/types" "^1.1.1"
-    "@rjsf/core" "^5.21.2"
-    "@rjsf/utils" "^5.21.2"
-
-"@janus-idp/backstage-plugin-orchestrator-form-react@^1.0.103":
-  version "1.0.103"
-  resolved "https://registry.yarnpkg.com/@janus-idp/backstage-plugin-orchestrator-form-react/-/backstage-plugin-orchestrator-form-react-1.0.103.tgz#0a5c406f7d2dac5acbca421c75f51bff51ac0ade"
-  integrity sha512-zM8Csf9K7J72vXW4QcQPUm8M13MIBurekiu22hol9o+jyAE+qZznFnkTKlNeLsE5ch5G2JCRR9/nG9GELdeZFQ==
+"@janus-idp/backstage-plugin-orchestrator-form-react@^1.0.102":
+  version "1.0.102"
+  resolved "https://registry.yarnpkg.com/@janus-idp/backstage-plugin-orchestrator-form-react/-/backstage-plugin-orchestrator-form-react-1.0.102.tgz#57f764af8469fde4db22beac82d22766ae198df9"
+  integrity sha512-C373p0fcTi/Tgz+jgd1Tk0Spq28exxCNO6NC2oXzJ30S94UOSA3vxGjp6Q5FdeONe8EctreUfKcu0B5wIhGYJQ==
   dependencies:
     "@backstage/core-components" "^0.14.9"
     "@backstage/core-plugin-api" "^1.9.3"
@@ -7157,17 +7109,6 @@
     nanoid "^3.3.7"
     prop-types "^15.8.1"
 
-"@rjsf/core@^5.21.2":
-  version "5.23.1"
-  resolved "https://registry.yarnpkg.com/@rjsf/core/-/core-5.23.1.tgz#97b22b552e0e38f1a2d16e87d0053d77b697c44e"
-  integrity sha512-yO0vlseZiomYNqpy/Jkd2gaP9BGqa+f3q1VIc17SGkQidHBqBNURAvOvqWFgvvALRZRNYoqnDuolWxT0AaoAog==
-  dependencies:
-    lodash "^4.17.21"
-    lodash-es "^4.17.21"
-    markdown-to-jsx "^7.4.1"
-    nanoid "^3.3.7"
-    prop-types "^15.8.1"
-
 "@rjsf/material-ui@5.18.5":
   version "5.18.5"
   resolved "https://registry.yarnpkg.com/@rjsf/material-ui/-/material-ui-5.18.5.tgz#bbb68519217a67b80679429fb97dd3e57c56e823"
@@ -7177,17 +7118,6 @@
   version "5.18.5"
   resolved "https://registry.yarnpkg.com/@rjsf/utils/-/utils-5.18.5.tgz#638724740b29784804dd244b0574213aa181469b"
   integrity sha512-b39ZSPv2lpH+VXUKrVsPnPyOKcTa9P08h50J0A1+7xHj6dm4KG1KY/mY4QCaNavZVXsQoieHOe8kmdFDlXirzA==
-  dependencies:
-    json-schema-merge-allof "^0.8.1"
-    jsonpointer "^5.0.1"
-    lodash "^4.17.21"
-    lodash-es "^4.17.21"
-    react-is "^18.2.0"
-
-"@rjsf/utils@^5.21.2":
-  version "5.23.1"
-  resolved "https://registry.yarnpkg.com/@rjsf/utils/-/utils-5.23.1.tgz#f9282d0fff2fd929778f91b14db88601476fbacf"
-  integrity sha512-cXnWgUdfeWWCsTIKamMdaP8q8lfFTvJfNQ8UyQlAumU/+hQQMOzVcyd/cVOlqWyV/JyTKrQMZOuQc9yXkka9FA==
   dependencies:
     json-schema-merge-allof "^0.8.1"
     jsonpointer "^5.0.1"
@@ -10388,7 +10318,7 @@ apg-lite@^1.0.3:
     "@backstage/plugin-user-settings" "^0.8.9"
     "@backstage/theme" "^0.5.6"
     "@backstage/types" "^1.1.1"
-    "@janus-idp/backstage-plugin-orchestrator-form-react" "^1.0.103"
+    "@janus-idp/backstage-plugin-orchestrator-form-react" "^1.0.102"
     "@material-ui/core" "^4.12.2"
     "@material-ui/icons" "^4.9.1"
     custom-form-example-plugin "*"
@@ -19110,7 +19040,7 @@ ms@2.1.2:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-ms@2.1.3, ms@^2.0.0, ms@^2.1.1, ms@^2.1.3:
+ms@2.1.3, ms@^2.0.0, ms@^2.1.1:
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
