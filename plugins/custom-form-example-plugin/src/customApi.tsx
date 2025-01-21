@@ -15,7 +15,7 @@ import { JSONSchema7 } from 'json-schema';
 import CountryWidget from './widgets/CountryWidget';
 import LanguageWidget from './widgets/LanguageSelectWidget';
 import { FormContextData } from './types';
-import { ConfigApi, DiscoveryApi, FetchApi } from '@backstage/core-plugin-api';
+import { ConfigApi, FetchApi } from '@backstage/core-plugin-api';
 
 interface Data extends JsonObject {
   personalInfo: {
