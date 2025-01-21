@@ -5,16 +5,17 @@ import {
 } from '@janus-idp/backstage-plugin-orchestrator-form-api';
 import {
   ErrorSchema,
-  FieldErrors,
   FormValidation,
   RegistryWidgetsType,
   UiSchema,
+  Widget,
 } from '@rjsf/utils';
 import { JsonObject } from '@backstage/types';
 import { JSONSchema7 } from 'json-schema';
 import CountryWidget from './widgets/CountryWidget';
 import LanguageWidget from './widgets/LanguageSelectWidget';
 import { FormContextData } from './types';
+import { ConfigApi, DiscoveryApi, FetchApi } from '@backstage/core-plugin-api';
 
 interface Data extends JsonObject {
   personalInfo: {
@@ -49,6 +50,14 @@ const customValidate = (
 };
 
 class CustomFormExtensionsApi implements OrchestratorFormApi {
+  private readonly configApi: ConfigApi;
+  private readonly fetchApi: FetchApi;
+
+  public constructor(options: { configApi: ConfigApi; fetchApi: FetchApi }) {
+    this.configApi = options.configApi;
+    this.fetchApi = options.fetchApi;
+  }
+
   getFormDecorator(
     _schema: JSONSchema7,
     _uiSchema: UiSchema<JsonObject>,
@@ -60,9 +69,24 @@ class CustomFormExtensionsApi implements OrchestratorFormApi {
           country: initialFormData?.personalInfo?.country,
         });
 
+        const countriesUrl =
+          this.configApi.getOptionalString('customForm.countriesUrl') ||
+          'https://missing.countryUrl.in.config';
+
+        const CountryWidgetWrapper: Widget<
+          JsonObject,
+          JSONSchema7,
+          FormContextData
+        > = props => <CountryWidget {...props} countriesUrl={countriesUrl} />;
+        const LanguageWidgetWrapper: Widget<
+          JsonObject,
+          JSONSchema7,
+          FormContextData
+        > = props => <LanguageWidget {...props} countriesUrl={countriesUrl} />;
+
         const widgets: RegistryWidgetsType<JsonObject, JSONSchema7, any> = {
-          LanguageWidget,
-          CountryWidget,
+          LanguageWidget: LanguageWidgetWrapper,
+          CountryWidget: CountryWidgetWrapper,
         };
 
         const onChange = (data: Data) => {

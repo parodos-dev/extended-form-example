@@ -3,22 +3,31 @@ import { MenuItem, FormControl, InputLabel, Select } from '@material-ui/core';
 import { Widget } from '@rjsf/utils';
 import { JSONSchema7 } from 'json-schema';
 import { JsonObject } from '@backstage/types';
+import { FormContextData } from '../types';
+
 // Define types for country and city options
 interface Option {
   label: string;
   value: string;
 }
+
 // Material-UI v4 Country Widget with Types
-const CountryWidget: Widget<JsonObject, JSONSchema7, any> = ({
+const CountryWidget: Widget<JsonObject, JSONSchema7, FormContextData> = ({
   value,
   onChange,
+  countriesUrl,
 }) => {
   const [countries, setCountries] = useState<Option[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const fetchCountries = async () => {
+  const fetchCountries = async (countriesUrl?: string) => {
+    if (!countriesUrl) {
+      return;
+    }
+
     try {
-      const response = await fetch('https://restcountries.com/v3.1/all');
+      // TODO: use Backstage fetchApi instead
+      const response = await fetch(countriesUrl);
       const data = (await response.json()) as unknown as any[];
       const countryOptions: Option[] = data
         .map((country: any) => ({
@@ -31,7 +40,7 @@ const CountryWidget: Widget<JsonObject, JSONSchema7, any> = ({
       setCountries(countryOptions);
     } catch (err) {
       // eslint-disable-next-line no-alert
-      alert('Failed to fetch contries');
+      alert(`Failed to fetch countries from: ${countriesUrl}`);
       // eslint-disable-next-line no-console
       console.error(err);
     } finally {
@@ -39,8 +48,8 @@ const CountryWidget: Widget<JsonObject, JSONSchema7, any> = ({
     }
   };
   useEffect(() => {
-    fetchCountries();
-  }, []);
+    fetchCountries(countriesUrl);
+  }, [countriesUrl]);
 
   const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
     onChange(event.target.value as string);
