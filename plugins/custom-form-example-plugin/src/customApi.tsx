@@ -70,7 +70,7 @@ class CustomFormExtensionsApi implements OrchestratorFormApi {
         });
 
         const countriesUrl =
-          this.configApi.getOptionalString('customForm.countriesUrl') ||
+          this.configApi.getOptionalString('custom-form-example-plugin.countriesUrl') ||
           'https://missing.countryUrl.in.config';
 
         const CountryWidgetWrapper: Widget<
