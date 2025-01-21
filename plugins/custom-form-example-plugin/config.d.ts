@@ -2,7 +2,7 @@ export interface Config {
   /**
    * @visibility frontend
    */
-  customForm?: {
+  "custom-form-example-plugin"?: {
     /**
      * @visibility frontend
      */
