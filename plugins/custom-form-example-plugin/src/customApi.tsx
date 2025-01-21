@@ -1,7 +1,16 @@
 import React from 'react';
-import { FormDecoratorProps, OrchestratorFormApi } from '@janus-idp/backstage-plugin-orchestrator-form-api';
-import { ErrorSchema, FieldErrors, FormValidation, RegistryWidgetsType, UiSchema } from '@rjsf/utils';
-import {JsonObject} from '@backstage/types';
+import {
+  FormDecoratorProps,
+  OrchestratorFormApi,
+} from '@janus-idp/backstage-plugin-orchestrator-form-api';
+import {
+  ErrorSchema,
+  FieldErrors,
+  FormValidation,
+  RegistryWidgetsType,
+  UiSchema,
+} from '@rjsf/utils';
+import { JsonObject } from '@backstage/types';
 import { JSONSchema7 } from 'json-schema';
 import CountryWidget from './widgets/CountryWidget';
 import LanguageWidget from './widgets/LanguageSelectWidget';
@@ -13,72 +22,88 @@ interface Data extends JsonObject {
     firstName: string;
     password: string;
     confirmPassword: string;
-  }
+  };
   languageInfo: {
     language: string;
-  }  
+  };
 }
 
 const reservedNames = ['admin', 'root', 'system'];
 
-
 const sleep = (ms: number) => {
   return new Promise(resolve => setTimeout(resolve, ms));
-}
+};
 
-const customValidate = (formData: JsonObject | undefined, errors: FormValidation<Data>): FormValidation<JsonObject> => {
+const customValidate = (
+  formData: JsonObject | undefined,
+  errors: FormValidation<Data>,
+): FormValidation<JsonObject> => {
   const _formData = formData as Data | undefined;
-  if (_formData?.personalInfo?.password !== _formData?.personalInfo?.confirmPassword) {
-    errors.personalInfo?.password?.addError("passwords do not match.");  
-  }          
+  if (
+    _formData?.personalInfo?.password !==
+    _formData?.personalInfo?.confirmPassword
+  ) {
+    errors.personalInfo?.password?.addError('passwords do not match.');
+  }
   return errors;
-}         
+};
 
-class CustomFormExtensionsApi implements OrchestratorFormApi {  
-    getFormDecorator(_schema: JSONSchema7, _uiSchema: UiSchema<JsonObject>, initialFormData?: Data) {
-      return (FormComponent: React.ComponentType<FormDecoratorProps>) => {    
-        return () => {
-          const [formContext, setFormContext] = React.useState<FormContextData>({country: initialFormData?.personalInfo?.country});
+class CustomFormExtensionsApi implements OrchestratorFormApi {
+  getFormDecorator(
+    _schema: JSONSchema7,
+    _uiSchema: UiSchema<JsonObject>,
+    initialFormData?: Data,
+  ) {
+    return (FormComponent: React.ComponentType<FormDecoratorProps>) => {
+      return () => {
+        const [formContext, setFormContext] = React.useState<FormContextData>({
+          country: initialFormData?.personalInfo?.country,
+        });
 
-        
-          const widgets: RegistryWidgetsType<JsonObject, JSONSchema7, any> = {
-              LanguageWidget, 
-              CountryWidget,
-          };
+        const widgets: RegistryWidgetsType<JsonObject, JSONSchema7, any> = {
+          LanguageWidget,
+          CountryWidget,
+        };
 
-          const onChange = (data: Data) => {
-            console.log("on change");
-            if (data.personalInfo?.country !== formContext.country ) {
-              setFormContext({country: data.personalInfo?.country});                    
-            }                  
-          };
+        const onChange = (data: Data) => {
+          console.log('on change');
+          if (data.personalInfo?.country !== formContext.country) {
+            setFormContext({ country: data.personalInfo?.country });
+          }
+        };
 
-          return (<FormComponent widgets={widgets} onChange={(e) => {
+        return (
+          <FormComponent
+            widgets={widgets}
+            onChange={e => {
               const data = e.formData as Data;
               onChange(data);
-            }} 
-            formContext={formContext}            
+            }}
+            formContext={formContext}
             customValidate={customValidate}
             getExtraErrors={async (formData: JsonObject) => {
               const _formData = formData as Data;
 
-              return sleep(1000).then(() => { 
+              return sleep(1000).then(() => {
                 const errors: ErrorSchema<Data> = {};
 
                 if (reservedNames.includes(_formData.personalInfo?.firstName)) {
                   errors.personalInfo = {
                     firstName: {
-                      __errors: [`Name ${_formData.personalInfo?.firstName} is reserved`]
-                    }
-                  }
+                      __errors: [
+                        `Name ${_formData.personalInfo?.firstName} is reserved`,
+                      ],
+                    },
+                  };
                 }
                 return errors;
-              })
+              });
             }}
-        />)};        
-      }
-    }    
+          />
+        );
+      };
+    };
   }
-  
+}
 
 export default CustomFormExtensionsApi;

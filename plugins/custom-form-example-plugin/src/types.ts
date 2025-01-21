@@ -1,4 +1,3 @@
-
 export type FormContextData = {
-    country?: string;
-}
+  country?: string;
+};
