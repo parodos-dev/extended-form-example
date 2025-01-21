@@ -61,7 +61,7 @@ const app = createApp({
   components: {
     SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
   },
-  plugins: [testFactoryPlugin]
+  plugins: [testFactoryPlugin],
 });
 
 const routes = (

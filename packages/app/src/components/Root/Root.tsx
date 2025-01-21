@@ -78,7 +78,11 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
         {/* End global nav */}
         <SidebarDivider />
         <SidebarScrollWrapper>
-        <SidebarItem icon={ExtensionIcon} to="custom-form" text="Custom Form" />
+          <SidebarItem
+            icon={ExtensionIcon}
+            to="custom-form"
+            text="Custom Form"
+          />
         </SidebarScrollWrapper>
       </SidebarGroup>
       <SidebarSpace />

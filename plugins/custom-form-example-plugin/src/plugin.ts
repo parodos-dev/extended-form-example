@@ -1,14 +1,10 @@
-import {
-  createApiFactory,
-  createPlugin,
-} from '@backstage/core-plugin-api';
+import { createApiFactory, createPlugin } from '@backstage/core-plugin-api';
 
 import { rootRouteRef } from './routes';
 import CustomApi from './customApi';
 import { orchestratorFormApiRef } from '@janus-idp/backstage-plugin-orchestrator-form-api';
 
-
-export const formApiFactory =  createApiFactory({
+export const formApiFactory = createApiFactory({
   api: orchestratorFormApiRef,
   deps: {},
   factory() {
@@ -21,9 +17,5 @@ export const testFactoryPlugin = createPlugin({
   routes: {
     root: rootRouteRef,
   },
-  apis: [
-    formApiFactory
-  ]
+  apis: [formApiFactory],
 });
-
-
